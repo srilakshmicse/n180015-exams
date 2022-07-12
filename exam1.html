@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href="exam1.css">
+        <style>
+            #head
+            {
+                background-color:skyblue;
+                color:white;
+                text-align:center;
+                position:relative;
+                left:550px;
+                width:400px;
+                height:100px;
+                border-radius:10px;
+                border:5px solid black;
+            }
+        .form{
+            position:relative;
+            top:10px;
+            background-color:yellow;
+            left:100px;
+            width:500px;
+        }
+    </style>
+        <script>
+            function validate()
+            {
+                var s=document.getElementById("fname").value;
+                var s2=s.toUpperCase();
+                document.getElementById("fname").value=s2;
+                var s1=s.startsWith("F");
+                if(s.length<4 || s.length>9 || s1==false)
+                {
+                   
+                    document.getElementById("fname").style.border="1px solid red";
+                    alert("please enter valid name");
+                    return false;
+                }
+                var e=document.getElementById("em").value;
+                var y=/[a-z,A-Z,0-9][0-9,A-Z,a-z,-,.]*@[a-z]{3,6}\.(edu|com|net|in)$/;
+                var y1=/^(N|n)180\d{3}@rguktn\.ac\.in/
+                if((y.test(e)==false)&&(y1.test(e)==false))
+                {
+                    alert("please enter valid email address");
+                    return false;
+                }
+                var s4=document.getElementById("mb").value;
+                var s5=/^977\d{7}$/;
+                var s6=/^\d{4}-\d{4}-\d{4}$/;
+                if((s5.test(s4)==false) &&  (s6.test(s4)==false))
+                {
+                    alert("please enter valid  mobile number");
+                    return false;
+                }
+               Beer();
+               var z=number();
+                if(z==false)
+                {
+                    alert("please enter valid payment number");
+                    return false;
+                }
+                rent();
+            }
+            function Beer()
+            {
+                var d=document.getElementById("A").checked;
+                var d1=document.getElementById("E").checked;
+                var d2=document.getElementById("G").checked;
+                var d4=document.getElementById("I").checked;
+                var d5=document.getElementById("R").checked;
+                if(d==true || d1==true || d2==true)
+                {
+                    var s=confirm("do you need beer");
+                    if(s==true)
+                    {
+                        alert("They require beer");
+                    }
+                    else
+                    {
+                        alert("They don't require beer");
+                    }
+                }
+            }
+            function number()
+            {
+                var t=document.getElementById("DD").checked;
+                var t1=document.getElementById("AC").checked;
+                var t5=document.getElementById("num").value;
+                var t2=/^SBIN\d{7}$/;
+                var t4=/^\d{11}$/;
+                if(t==true)
+                {
+                    alert("you selected for DD number");
+                    if(t2.test(t5)==false)
+                    {
+                        alert("please enter valid dd number");
+                        return false;
+                    }
+                }
+                else if(t1==true)
+                {
+                    alert("you selected for Account number");
+                    if(t4.test(t5)==false)
+                    {
+                        alert("please enter valid account number");
+                        return false;
+                    }
+                }
+            }
+            function rent()
+            {
+                var x=document.getElementById("nd").value;
+                var x1=document.getElementById("N").checked;
+                var x2=document.getElementById("K").checked;
+                var x5=document.getElementById("O").checked;
+                var x6=document.getElementById("S").checked;
+                var r=0;
+                if(x1==true || x2==true)
+                {
+                    r=x*2000;
+                    alert("you have to pay: "+r+" rupees");
+                }
+                else if(x5==true || x6==true)
+                {
+                    r=x*3000;
+                    alert("you have to pay: "+r+" rupees");
+                }
+                document.getElementById("re").value=r;
+            }
+            function sri()
+            {
+                document.getElementById("head").style.backgroundColor="green";
+                document.getElementById("head").style.color="yellow";
+            }
+            function sri1()
+            {
+                document.getElementById("head").style.backgroundColor="blue";
+                document.getElementById("head").style.color="white";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="head">
+        <h1 id="hs"><u>F1H20</u><sub style="font-size:12px;color:red">RGUKT</sub></h1>
+        </div>
+        <center>
+            <div class="form">
+                <form action="\s.php" method="post" onsubmit="return validate();">
+                    <table>
+                        <tr><td>UserName:</td><td><input type="text" placeholder="please enter your name"  id="fname"></td></tr>
+                        <tr><td>EMAIL:</td><td><input type="email" id="em"></td></tr>
+                        <tr><td>MobileNumber:</td><td><input type="text" placeholder="enter your mobile number" id="mb"></td></tr>
+                        <tr><td>Participants from:</td><td>America<input type="radio" id="A" name="r" checked>
+                            India<input type="radio" id="I" name="r" checked>
+                            England<input type="radio" id="E" name="r" checked>
+                            Germany<input type="radio" id="G" name="r" checked>
+                            RGUKTIAN<input type="radio" id="R" name="r" checked>
+                        </td></tr>
+                        <tr><td>Registration fee payment:</td><td>DD Number:<input type="radio" id="DD" name="d" checked>
+                            Account Number:<input type="radio" id="AC" name="d" checked>
+                        </td></tr>
+                        <tr><td>Number:</td><td><input type="text" id="num"></td></tr>
+                        <tr><td>Accomodation:</td><td>INUZVID:<input type="radio" name="r1" id="N" checked>
+                            IONGOLE:<input type="radio" name="r1" id="O" checked>
+                            IKadapa:<input type="radio" name="r1" id="K" checked>
+                            ISKLM:<input type="radio" name="r1" id="S" checked>
+                        </td></tr>
+                        <tr><td>Services</td><td>Breakfast:<input type="checkbox">
+                            lunch:<input type="checkbox">
+                            Dinner:<input type="checkbox">
+                            snacks:<input type="checkbox">
+                            eggs:<input type="checkbox">
+                            tea:<input type="checkbox">
+                        </td>
+                        </tr>
+                        <tr><td>No of days:</td><td><input type="text" id="nd" placeholder="enter no of days"></td></tr>
+                        <tr><td>RENT:</td><td><input type="text" readonly id="re"></td></tr>
+                        <tr><td></td><td><input type="submit" value="submit"></td></tr>
+                        </table>
+                </form>
+                </div>
+        </center>
+        <script>
+            var d=document.getElementById("head");
+            d.addEventListener('mouseover',sri);
+        d.addEventListener('mouseout',sri1);
+        </script>
+    </body>
+</html>
