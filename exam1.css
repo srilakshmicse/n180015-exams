@@ -1,0 +1,52 @@
+body
+{
+	background-image:url('back1.jpg');
+	background-repeat:no-repeat;
+	background-size:1000px 1000px;
+	background-position:center;
+	animation-name:sun;
+	animation-duration:40s;
+	animation-iteration-count:100;
+
+}
+@keyframes sun
+{
+	
+	0%
+	{
+		background-image: url('back8.jpg');
+		background-repeat:no-repeat;
+			background-size:1000px 1000px;
+	}
+	25%
+	{
+		background-image: url('back9.jpg');
+		background-repeat:no-repeat;
+			background-size:1000px 1000px;
+	}
+	50%
+	{
+		background-image: url('back10.jpg');
+		background-repeat:no-repeat;
+			background-size:1000px 1000px;
+	}
+	100%
+	{
+		background-image: url('back20.jpg');
+		background-repeat:no-repeat;
+			background-size:1000px 1000px;
+	}	
+	
+}
+input[type=text]:focus
+{
+background-color:yellow;
+}
+input[type=password]:focus
+{
+background-color:yellow;
+}
+input[type=email]:focus
+{
+background-color:yellow;
+}
